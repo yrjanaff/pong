@@ -1,3 +1,3 @@
-#Pong
+# Pong
 
-Pong written in Kotlin with LibGDX.
+Pong, written in Kotlin with LibGDX.
