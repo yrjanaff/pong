@@ -5,7 +5,7 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import no.fraschetti.pong.states.GameStateManager
-import no.fraschetti.pong.states.PlayState
+import no.fraschetti.pong.states.MenuSate
 
 class Pong : ApplicationAdapter() {
 
@@ -15,7 +15,7 @@ class Pong : ApplicationAdapter() {
     override fun create() {
         batch = SpriteBatch()
         gsm = GameStateManager()
-        gsm.push(PlayState(gsm))
+        gsm.push(MenuSate(gsm))
     }
 
     override fun render() {

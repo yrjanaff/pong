@@ -1,22 +1,30 @@
 package no.fraschetti.pong.states
 
+import com.badlogic.gdx.Gdx
+import com.badlogic.gdx.Input
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
+import no.fraschetti.pong.utils.Constants
+
 
 class MenuSate(gsm: GameStateManager) : State(gsm) {
-    
+
     override fun handleInput() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) gsm.set(PlayState(gsm))
     }
 
     override fun update(dt: Float) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        handleInput()
     }
 
     override fun render(sb: SpriteBatch) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        sb.begin()
+        gsm.getBorder(sb)
+        gsm.getAiScoreFont(sb)
+        gsm.getPlayerScoreFont(sb)
+        gsm.textElements.startFont.draw(sb, Constants.START_TEXT, (Constants.WIDTH / 2f) - 190, Constants.HEIGHT / 2f)
+        sb.end()
     }
 
     override fun dispose() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }
